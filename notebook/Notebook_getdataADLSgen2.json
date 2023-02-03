@@ -1,0 +1,66 @@
+{
+	"name": "Notebook_getdataADLSgen2",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "TestADLSGen2AZ",
+			"type": "BigDataPoolReference"
+		},
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"runAsWorkspaceSystemIdentity": false,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "a2b88b92-dcfe-418d-843d-e7a5c2662c15"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/6dd87588-33b7-47a0-819a-c9883919a4e8/resourceGroups/Day5RG/providers/Microsoft.Synapse/workspaces/anisheksynapsewp2023/bigDataPools/TestADLSGen2AZ",
+				"name": "TestADLSGen2AZ",
+				"type": "Spark",
+				"endpoint": "https://anisheksynapsewp2023.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/TestADLSGen2AZ",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net",
+					"authHeader": null
+				},
+				"sparkVersion": "3.3",
+				"nodeCount": 10,
+				"cores": 4,
+				"memory": 28,
+				"extraHeader": null
+			},
+			"sessionKeepAliveTimeout": 30
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"df = spark.read.json(\"wasbs://spark@anishekfscontainer2023.blob.core.windows.net/0_9c4b3bfeb2c14e71b933a67505f7c73a_1.json\")\r\n",
+					""
+				],
+				"execution_count": 4
+			}
+		]
+	}
+}
